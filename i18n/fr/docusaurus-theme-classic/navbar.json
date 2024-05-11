@@ -1,0 +1,14 @@
+{
+  "logo.alt": {
+    "message": "Piyovi",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Product Guide": {
+    "message": "Product Guide",
+    "description": "Navbar item with label Product Guide"
+  },
+  "item.label.Releases": {
+    "message": "Releases",
+    "description": "Navbar item with label Releases"
+  }
+}

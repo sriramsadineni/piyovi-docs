@@ -1,0 +1,46 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.guides.category.Carrier": {
+    "message": "Carrier",
+    "description": "The label for category Carrier in sidebar guides"
+  },
+  "sidebar.guides.category.Carrier.link.generated-index.description": {
+    "message": "5 minutes to learn the most important Docusaurus concepts.",
+    "description": "The generated-index page description for category Carrier in sidebar guides"
+  },
+  "sidebar.guides.category.Integration": {
+    "message": "Integration",
+    "description": "The label for category Integration in sidebar guides"
+  },
+  "sidebar.guides.category.Integration.link.generated-index.description": {
+    "message": "5 minutes to learn the most important Docusaurus concepts.",
+    "description": "The generated-index page description for category Integration in sidebar guides"
+  },
+  "sidebar.guides.category.Invoice Audit": {
+    "message": "Invoice Audit",
+    "description": "The label for category Invoice Audit in sidebar guides"
+  },
+  "sidebar.guides.category.Invoice Audit.link.generated-index.description": {
+    "message": "5 minutes to learn the most important Docusaurus concepts.",
+    "description": "The generated-index page description for category Invoice Audit in sidebar guides"
+  },
+  "sidebar.guides.category.Shipment": {
+    "message": "Shipment",
+    "description": "The label for category Shipment in sidebar guides"
+  },
+  "sidebar.guides.category.Shipment.link.generated-index.description": {
+    "message": "5 minutes to learn the most important Docusaurus concepts.",
+    "description": "The generated-index page description for category Shipment in sidebar guides"
+  },
+  "sidebar.guides.category.Spot Quote": {
+    "message": "Spot Quote",
+    "description": "The label for category Spot Quote in sidebar guides"
+  },
+  "sidebar.guides.category.Spot Quote.link.generated-index.description": {
+    "message": "5 minutes to learn the most important Docusaurus concepts.",
+    "description": "The generated-index page description for category Spot Quote in sidebar guides"
+  }
+}

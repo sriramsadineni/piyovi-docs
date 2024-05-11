@@ -1,0 +1,12 @@
+[
+  {
+    "version": "2.0.0",
+    "label": "v2.0.0",
+    "baseUrl": "/api/piyovi-apis"
+  },
+  {
+    "version": "1.0.0",
+    "label": "v1.0.0",
+    "baseUrl": "/api/1.0.0/piyovi-apis"
+  }
+]

@@ -34,13 +34,10 @@ const config: Config = {
       'classic',
       {
         docs: {
-          routeBasePath: "/",
           sidebarPath: './sidebars.ts',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          docItemComponent: "@theme/ApiItem",
-          docRootComponent: "@theme/DocRoot",
-        
+
         },
         blog: {
           showReadingTime: true,
@@ -71,6 +68,7 @@ const config: Config = {
           position: 'left',
           label: 'Product Guide',
         },
+       
         {
           type: 'docSidebar',
           position: 'left',
@@ -82,10 +80,7 @@ const config: Config = {
           type: 'localeDropdown',
           position: 'right',
         },
-        {
-          label: "Api",
-          to: "/api",
-        },
+       
       ],
     },
     footer: {
@@ -98,6 +93,57 @@ const config: Config = {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
     },
+    languageTabs: [
+      {
+        highlight: "bash",
+        language: "curl",
+        logoClass: "bash",
+      },
+      {
+        highlight: "python",
+        language: "python",
+        logoClass: "python",
+        variant: "requests",
+      },
+      {
+        highlight: "go",
+        language: "go",
+        logoClass: "go",
+      },
+      {
+        highlight: "javascript",
+        language: "nodejs",
+        logoClass: "nodejs",
+        variant: "axios",
+      },
+      {
+        highlight: "ruby",
+        language: "ruby",
+        logoClass: "ruby",
+      },
+      {
+        highlight: "csharp",
+        language: "csharp",
+        logoClass: "csharp",
+        variant: "httpclient",
+      },
+      {
+        highlight: "php",
+        language: "php",
+        logoClass: "php",
+      },
+      {
+        highlight: "java",
+        language: "java",
+        logoClass: "java",
+        variant: "unirest",
+      },
+      {
+        highlight: "powershell",
+        language: "powershell",
+        logoClass: "powershell",
+      },
+    ],
     announcementBar: {
       id: "announcementBar_1",
       content:
@@ -107,60 +153,66 @@ const config: Config = {
   } satisfies Preset.ThemeConfig,
   plugins:[
     [
-      '@scalar/docusaurus',
-      {
-        id: 'api-reference-1', 
-        label: "Api Reference",
-        route: '/api-reference',
-        configuration: {
-          baseServerURL:"https://apidev.piyovi.io",
-          hideModels: true,
-          withDefaultFonts: false,
-          spec: {
-            url: 'https://apidev.piyovi.io/swagger/v1/swagger.json',
-          },
-        }
-      } as ScalarOptions,
-    ],
-[ 'docusaurus-lunr-search',{
+    '@scalar/docusaurus',
+    {
+      id: 'api-reference-1', 
+      label: "Api Reference",
+      route: '/api-reference',
+      configuration: {
+        baseServerURL:"https://apiuat.piyovi.io/",
+        hideModels: true,
+        withDefaultFonts: false,
+        spec: {
+          url: 'https://apiuat.piyovi.io/swagger/v1/swagger.json',
+        },
+      }
+    } as ScalarOptions,
+  ],
+ [ 'docusaurus-lunr-search',{
   languages: ['en'] // language codes
 
  }],
- [
-  'docusaurus-plugin-openapi-docs',
-  {
-    id: "openapi", // plugin id
-    docsPluginId: "classic", // id of plugin-content-docs or preset for rendering docs
-    config: {
-      api: {
-        specPath: "https://apidev.piyovi.io/swagger/v1/swagger.json",
-        outputDir: "docs/api", // No trailing slash
-        sidebarOptions: {
-          groupPathsBy: "tag",
-          categoryLinkSource: "tag",
-        },
-        version: "2.0.0", // Current version
-        label: "v2.0.0", // Current version label
-        baseUrl: "/api/piyovi-apis", // Leading slash is important
-        versions: {
-          "1.0.0": {
-            specPath: "https://apidev.piyovi.io/swagger/v1/swagger.json",
-            outputDir: "docs/api/1.0.0", // No trailing slash
-            label: "v1.0.0",
-            baseUrl: "/api/1.0.0/piyovi-apis", // Leading slash is important
-          },
-        },
-      }
-  
-    }
-  }]
-],
-themes: ["docusaurus-theme-openapi-docs"],
-
+]
 
 };
 
 export default config;
 
- 
+// algolia:{
+//   apiKey : "e0d1cdc483314208e3d491c4d674b615",
+//   appId: "9K527TJ8A7",
+//   indexName : "docs_piyovi",
+//   contextualSearch: true,
 
+// }
+
+//  [
+//       'docusaurus-plugin-openapi-docs',
+//       {
+//         id: "openapi", // plugin id
+//         docsPluginId: "classic", // id of plugin-content-docs or preset for rendering docs
+//         config: {
+//           piyoviapi: { // the <id> referenced when running CLI commands
+//             specPath: "https://petstore.swagger.io/v2/swagger.json", // path to OpenAPI spec, URLs supported
+//             outputDir: "docs/api", // output directory for generated files
+//             sidebarOptions: {
+//               groupPathsBy: "tag",
+//               categoryLinkSource: "tag",
+//             },
+//           },
+      
+//         }
+//       },
+//     ]
+// ],
+// themes: ["docusaurus-theme-openapi-docs"],
+
+
+// docs: {
+//   sidebarPath: './sidebars.ts',
+//   // Please change this to your repo.
+//   // Remove this to remove the "edit this page" links.
+//   docItemComponent: "@theme/ApiItem",
+//   docRootComponent: "@theme/DocRoot",
+
+// },

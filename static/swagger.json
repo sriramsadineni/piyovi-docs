@@ -1,0 +1,2647 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Piyovi Apis",
+    "version": "1.0"
+  },
+  "paths": {
+    "/v1/authorize/token": {
+      "post": {
+        "tags": [
+          "ExternalAccountApi"
+        ],
+        "summary": "Login",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.ExternalLoginModel"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.ExternalLoginModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.ExternalLoginModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.ExternalLoginModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v1/shipment": {
+      "post": {
+        "tags": [
+          "ExternalShipmentApi"
+        ],
+        "summary": "Ship",
+        "description": "**Sample request body:**\r\n            \r\n    {\r\n       \"id\": 1,\r\n       \"Date\": \"2022-06-24\",\r\n       \"TemperatureC\": 30,\r\n       \"Summary\": \"TemperatureC is 30 today\",\r\n    }",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Shipments.ExternalShipmentRequestModel"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Shipments.ExternalShipmentRequestModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Shipments.ExternalShipmentRequestModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Shipments.ExternalShipmentRequestModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Failed/Unauthorized"
+          }
+        }
+      }
+    },
+    "/v1/activity/{id}": {
+      "get": {
+        "tags": [
+          "ExternalShipmentApi"
+        ],
+        "summary": "Get External Api Request",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v1/shipment/cancel": {
+      "post": {
+        "tags": [
+          "ExternalShipmentApi"
+        ],
+        "summary": "Ship",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Cancel.ExternalShipmentCancelRequestModel"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Cancel.ExternalShipmentCancelRequestModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Cancel.ExternalShipmentCancelRequestModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Cancel.ExternalShipmentCancelRequestModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v1/shipment/update": {
+      "post": {
+        "tags": [
+          "ExternalShipmentApi"
+        ],
+        "summary": "shipment update",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.ShipmentUpdate.ExternalShipmentUpdateRequestModel"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.ShipmentUpdate.ExternalShipmentUpdateRequestModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.ShipmentUpdate.ExternalShipmentUpdateRequestModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.ShipmentUpdate.ExternalShipmentUpdateRequestModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v1/shipment/track": {
+      "post": {
+        "tags": [
+          "ExternalShipmentApi"
+        ],
+        "summary": "tracking",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Tracking.ExternalShipmentTrackingRequestModel"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Tracking.ExternalShipmentTrackingRequestModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Tracking.ExternalShipmentTrackingRequestModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Tracking.ExternalShipmentTrackingRequestModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v1/shipment/rate": {
+      "post": {
+        "tags": [
+          "ExternalShipmentApi"
+        ],
+        "summary": "tracking",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Rates.ExternalShipmentRateRequestModel"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Rates.ExternalShipmentRateRequestModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Rates.ExternalShipmentRateRequestModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Rates.ExternalShipmentRateRequestModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v1/shipment/address_validation": {
+      "post": {
+        "tags": [
+          "ExternalShipmentApi"
+        ],
+        "summary": "address validation",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.AddressValidation.ExternalAddressValidationRequestModel"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.AddressValidation.ExternalAddressValidationRequestModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.AddressValidation.ExternalAddressValidationRequestModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.AddressValidation.ExternalAddressValidationRequestModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v1/shipment/{id}/block": {
+      "put": {
+        "tags": [
+          "ExternalShipmentApi"
+        ],
+        "summary": "block shipment",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Shipments.ExternalShipmenBlockRequestModel"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Shipments.ExternalShipmenBlockRequestModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Shipments.ExternalShipmenBlockRequestModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Shipments.ExternalShipmenBlockRequestModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v1/shipment/{id}/unblock": {
+      "put": {
+        "tags": [
+          "ExternalShipmentApi"
+        ],
+        "summary": "unblock shipment",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Shipments.ExternalShipmenBlockRequestModel"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Shipments.ExternalShipmenBlockRequestModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Shipments.ExternalShipmenBlockRequestModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Shipments.ExternalShipmenBlockRequestModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v1/shipment/{id}/archive": {
+      "delete": {
+        "tags": [
+          "ExternalShipmentApi"
+        ],
+        "summary": "Archieve",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v1/removecache": {
+      "get": {
+        "tags": [
+          "ExternalShipmentApi"
+        ],
+        "summary": "used to clear the server cache",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v1/tp/shipment": {
+      "post": {
+        "tags": [
+          "ExternalThirdPartyShipmentApi"
+        ],
+        "summary": "Third Party Tracking",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.ThirdPartyShipment.AddThirdPartyShipmentRequestModel"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.ThirdPartyShipment.AddThirdPartyShipmentRequestModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.ThirdPartyShipment.AddThirdPartyShipmentRequestModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.ThirdPartyShipment.AddThirdPartyShipmentRequestModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "ExternalThirdPartyShipmentApi"
+        ],
+        "summary": "Update Third Party Shipment",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.ThirdPartyShipment.UpdateThirdPartyShipmentRequestModel"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.ThirdPartyShipment.UpdateThirdPartyShipmentRequestModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.ThirdPartyShipment.UpdateThirdPartyShipmentRequestModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.ThirdPartyShipment.UpdateThirdPartyShipmentRequestModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v1/tp/track": {
+      "post": {
+        "tags": [
+          "ExternalThirdPartyShipmentApi"
+        ],
+        "summary": "Third Party Tracking",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Tracking.ThirdPartyShipmentGetEventRequestModel"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Tracking.ThirdPartyShipmentGetEventRequestModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Tracking.ThirdPartyShipmentGetEventRequestModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Tracking.ThirdPartyShipmentGetEventRequestModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/v1/tp/events": {
+      "patch": {
+        "tags": [
+          "ExternalThirdPartyShipmentApi"
+        ],
+        "summary": "Third Party Tracking",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Tracking.ThirdPartyWebhookRequestModel"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Tracking.ThirdPartyWebhookRequestModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Tracking.ThirdPartyWebhookRequestModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Tracking.ThirdPartyWebhookRequestModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "ExternalThirdPartyShipmentApi"
+        ],
+        "summary": "",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Piyovi.Tms.Core.Domain.Shipments.ShipmentCodDetail": {
+        "type": "object",
+        "properties": {
+          "codRequired": {
+            "type": "boolean",
+            "description": "Cod Required"
+          },
+          "codAmountValue": {
+            "type": "number",
+            "description": "COD Amount Value",
+            "format": "double",
+            "nullable": true
+          },
+          "codAmountCurrency": {
+            "type": "string",
+            "description": "COD Amount Currency",
+            "nullable": true
+          },
+          "codCollectionType": {
+            "type": "string",
+            "description": "COD Collection Type",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": ""
+      },
+      "Piyovi.Tms.Core.Domain.Shipments.ShipmentLTLOption": {
+        "type": "object",
+        "properties": {
+          "overLength": {
+            "type": "boolean",
+            "description": "Over Length"
+          },
+          "length": {
+            "type": "number",
+            "description": "Lenght",
+            "format": "double",
+            "nullable": true
+          },
+          "uom": {
+            "type": "string",
+            "description": "Unit of measurement",
+            "nullable": true
+          },
+          "trailerNo": {
+            "type": "string",
+            "description": "",
+            "nullable": true
+          },
+          "sealNo": {
+            "type": "string",
+            "description": "",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Shipment LTL Option"
+      },
+      "Piyovi.Tms.Core.Domain.Shipments.ShipmentOthersDetail": {
+        "type": "object",
+        "properties": {
+          "bookingConfNo": {
+            "type": "string",
+            "description": "Booking Confirmation Number",
+            "nullable": true
+          },
+          "returnShipmentType": {
+            "type": "string",
+            "description": "Return Shipment Type",
+            "nullable": true
+          },
+          "defaultDescription": {
+            "type": "string",
+            "description": "Default Description",
+            "nullable": true
+          },
+          "equipmentType": {
+            "type": "string",
+            "description": "Equipment Type",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Shipment Details to capture additional details"
+      },
+      "Piyovi.Tms.Core.Domain.Shipments.ShipmentPickupDetail": {
+        "type": "object",
+        "properties": {
+          "pickRequired": {
+            "type": "boolean",
+            "description": "Pick Required"
+          },
+          "earliestReadyTime": {
+            "$ref": "#/components/schemas/System.TimeSpan"
+          },
+          "latestReadyTime": {
+            "$ref": "#/components/schemas/System.TimeSpan"
+          },
+          "pickupDate": {
+            "type": "string",
+            "description": "Pickup Date",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Shipment Pickup Detail"
+      },
+      "Piyovi.Tms.External.Api.Models.AddressValidation.ExternalAddressValidationRequestModel": {
+        "type": "object",
+        "properties": {
+          "address": {
+            "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Shipments.ExternalAddressDetailModel"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Piyovi.Tms.External.Api.Models.Cancel.ExternalShipmentCancelRequestModel": {
+        "type": "object",
+        "properties": {
+          "shipments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Cancel.ExternalShipmentCancellationModel"
+            },
+            "description": "Shipments",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Shipments"
+      },
+      "Piyovi.Tms.External.Api.Models.Cancel.ExternalShipmentCancellationModel": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Id",
+            "nullable": true
+          },
+          "cancelReason": {
+            "type": "string",
+            "description": "Cancel Reason",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Piyovi.Tms.External.Api.Models.ExternalLoginModel": {
+        "required": [
+          "clientId",
+          "password",
+          "userName"
+        ],
+        "type": "object",
+        "properties": {
+          "userName": {
+            "minLength": 1,
+            "type": "string",
+            "description": "User Name",
+            "format": "email"
+          },
+          "password": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "clientId": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Piyovi.Tms.External.Api.Models.Rates.ExternalShipmentRateRequestModel": {
+        "type": "object",
+        "properties": {
+          "client": {
+            "type": "string",
+            "description": "Client",
+            "nullable": true
+          },
+          "integration": {
+            "type": "string",
+            "description": "Integration Id",
+            "nullable": true
+          },
+          "referenceType": {
+            "type": "string",
+            "description": "Reference Type",
+            "nullable": true
+          },
+          "referenceNumber": {
+            "type": "string",
+            "description": "Reference Number",
+            "nullable": true
+          },
+          "location": {
+            "type": "string",
+            "description": "Location",
+            "nullable": true
+          },
+          "shipDate": {
+            "type": "string",
+            "description": "Ship Date",
+            "format": "date-time",
+            "nullable": true
+          },
+          "user": {
+            "type": "string",
+            "description": "User",
+            "nullable": true
+          },
+          "shipTo": {
+            "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Shipments.ExternalAddressDetailModel"
+          },
+          "shipFrom": {
+            "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Shipments.ExternalAddressDetailModel"
+          },
+          "parties": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Shipments.ExternalShipmentPartyModel"
+            },
+            "description": "Parties",
+            "nullable": true
+          },
+          "packages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Shipments.ExternalShipmentPackageModel"
+            },
+            "description": "Packages",
+            "nullable": true
+          },
+          "shipmentInfo": {
+            "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Shipments.ExternalShipmentInfoModel"
+          },
+          "references": {
+            "type": "object",
+            "additionalProperties": { },
+            "description": "References",
+            "nullable": true
+          },
+          "internationalDetail": {
+            "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Shipments.ExternalShipmentInternationalDetailModel"
+          },
+          "specialService": {
+            "type": "object",
+            "additionalProperties": { },
+            "description": "Special Service",
+            "nullable": true
+          },
+          "notes": {
+            "type": "string",
+            "description": "Special Instructions",
+            "nullable": true
+          },
+          "currencyCode": {
+            "type": "string",
+            "description": "Currency Code",
+            "nullable": true
+          },
+          "unitOfWeight": {
+            "type": "string",
+            "description": "UnitOfWeight",
+            "nullable": true
+          },
+          "unitOfLength": {
+            "type": "string",
+            "description": "UnitOfLength",
+            "nullable": true
+          },
+          "dgItems": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Shipments.ExternalShipmentDgItemModel"
+            },
+            "description": "External Shipment DgItem",
+            "nullable": true
+          },
+          "additionalOptions": {
+            "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Shipments.ExternalShipmentAdditionalOption"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Piyovi.Tms.External.Api.Models.ShipmentUpdate.ExternalShipmentUpdateItemModel": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Id",
+            "nullable": true
+          },
+          "carrierReferenceId": {
+            "type": "string",
+            "description": "Carrier Reference Id",
+            "nullable": true
+          },
+          "shipMethod": {
+            "type": "string",
+            "description": "Ship Method",
+            "nullable": true
+          },
+          "references": {
+            "type": "object",
+            "additionalProperties": { },
+            "description": "Reference Fields",
+            "nullable": true
+          },
+          "discountedCost": {
+            "type": "number",
+            "description": "Discounted Cost",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Piyovi.Tms.External.Api.Models.ShipmentUpdate.ExternalShipmentUpdateRequestModel": {
+        "type": "object",
+        "properties": {
+          "shipments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.ShipmentUpdate.ExternalShipmentUpdateItemModel"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Piyovi.Tms.External.Api.Models.Shipments.ExternalAddressDetailModel": {
+        "type": "object",
+        "properties": {
+          "addressId": {
+            "type": "string",
+            "description": "Address Id",
+            "nullable": true
+          },
+          "companyName": {
+            "type": "string",
+            "description": "FirstName",
+            "nullable": true
+          },
+          "contactName": {
+            "type": "string",
+            "description": "Last Name",
+            "nullable": true
+          },
+          "emailAddress": {
+            "type": "string",
+            "description": "Email",
+            "nullable": true
+          },
+          "phoneNumber1": {
+            "type": "string",
+            "description": "Phone Number1",
+            "nullable": true
+          },
+          "address1": {
+            "type": "string",
+            "description": "Address1",
+            "nullable": true
+          },
+          "address2": {
+            "type": "string",
+            "description": "Address2",
+            "nullable": true
+          },
+          "area": {
+            "type": "string",
+            "description": "Area",
+            "nullable": true
+          },
+          "city": {
+            "type": "string",
+            "description": "City",
+            "nullable": true
+          },
+          "stateProvince": {
+            "type": "string",
+            "description": "State",
+            "nullable": true
+          },
+          "country": {
+            "type": "string",
+            "description": "Country",
+            "nullable": true
+          },
+          "zipPostalCode": {
+            "type": "string",
+            "description": "ZipPostal Code",
+            "nullable": true
+          },
+          "vatorTax": {
+            "type": "string",
+            "description": "Vat/Tax",
+            "nullable": true
+          },
+          "vatorTaxType": {
+            "type": "string",
+            "description": "Vator Tax Type",
+            "nullable": true
+          },
+          "vatorTaxTypeCountryCode": {
+            "type": "string",
+            "description": "Vat or Tax Type Country Code",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "External Address Detail"
+      },
+      "Piyovi.Tms.External.Api.Models.Shipments.ExternalShipmenBlockRequestModel": {
+        "type": "object",
+        "properties": {
+          "reason": {
+            "type": "string",
+            "description": "Remark",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Piyovi.Tms.External.Api.Models.Shipments.ExternalShipmentAdditionalOption": {
+        "type": "object",
+        "properties": {
+          "pickupDetails": {
+            "$ref": "#/components/schemas/Piyovi.Tms.Core.Domain.Shipments.ShipmentPickupDetail"
+          },
+          "codDetails": {
+            "$ref": "#/components/schemas/Piyovi.Tms.Core.Domain.Shipments.ShipmentCodDetail"
+          },
+          "others": {
+            "$ref": "#/components/schemas/Piyovi.Tms.Core.Domain.Shipments.ShipmentOthersDetail"
+          },
+          "ltlOptions": {
+            "$ref": "#/components/schemas/Piyovi.Tms.Core.Domain.Shipments.ShipmentLTLOption"
+          },
+          "applyRule": {
+            "type": "boolean",
+            "description": "ApplyRule"
+          }
+        },
+        "additionalProperties": false,
+        "description": "External Shipment Additional Option"
+      },
+      "Piyovi.Tms.External.Api.Models.Shipments.ExternalShipmentDgItemModel": {
+        "type": "object",
+        "properties": {
+          "referenceId": {
+            "type": "string",
+            "description": "ReferenceId",
+            "nullable": true
+          },
+          "unNumber": {
+            "type": "string",
+            "description": "UN NUmber of the DG/Hazardous item",
+            "nullable": true
+          },
+          "properShippingName": {
+            "type": "string",
+            "description": "DG Item description",
+            "nullable": true
+          },
+          "technicalName": {
+            "type": "string",
+            "description": "Technical Name of the DG item",
+            "nullable": true
+          },
+          "dgClass": {
+            "type": "string",
+            "description": "HAZMAT/ DG classification",
+            "nullable": true
+          },
+          "subClass": {
+            "type": "string",
+            "description": "HAZMAT/DG sub class if any exists",
+            "nullable": true
+          },
+          "packingGroup": {
+            "type": "string",
+            "description": "Package Group for the DG shipment",
+            "nullable": true
+          },
+          "packingInstructions": {
+            "type": "string",
+            "description": "Package instructions as per DG regulations",
+            "nullable": true
+          },
+          "quantity": {
+            "type": "string",
+            "description": "Total number of quantity for the DG material",
+            "nullable": true
+          },
+          "units": {
+            "type": "string",
+            "description": "Units for the DG material(liters)",
+            "nullable": true
+          },
+          "labelText": {
+            "type": "string",
+            "description": "Label text on the DG shipment",
+            "nullable": true
+          },
+          "cargoAirCraftOnly": {
+            "type": "boolean",
+            "description": "AircraftOnly flag for the Cargo or Passenger option (global options)"
+          },
+          "packCount": {
+            "type": "integer",
+            "description": "DG package count",
+            "format": "int32"
+          },
+          "containerType": {
+            "type": "string",
+            "description": "HAZMAT/DG Container Type  (global options)",
+            "nullable": true
+          },
+          "accessibility": {
+            "type": "boolean",
+            "description": "HAZMAT accessibility indication (global options)"
+          },
+          "dgOption": {
+            "type": "string",
+            "description": "DG Optional value DGOption accepts only BATTERY, HAZARDOUS_MATERIALS, LIMITED_QUANTITIES_COMMODITIES, ORM_D, REPORTABLE_QUANTITIES, SMALL_QUANTITY_EXCEPTION  (global options)",
+            "nullable": true
+          },
+          "regulation": {
+            "type": "string",
+            "description": "Type of regulation for the DG shipment (IATA, DOT, ADR, ORMD, CFR49) (global options)",
+            "nullable": true
+          },
+          "limitedQuantity": {
+            "type": "boolean",
+            "description": "Limited quantity value"
+          },
+          "signatoryContactName": {
+            "type": "string",
+            "description": "DG Signatory Contact Name",
+            "nullable": true
+          },
+          "signatoryTitle": {
+            "type": "string",
+            "description": "DG Signatory  Title",
+            "nullable": true
+          },
+          "signatoryPlace": {
+            "type": "string",
+            "description": "DG Signatory  Place",
+            "nullable": true
+          },
+          "processingOptions": {
+            "type": "string",
+            "description": "DG Processing Options",
+            "nullable": true
+          },
+          "offeror": {
+            "type": "string",
+            "description": "Offeror name of the DG shipment",
+            "nullable": true
+          },
+          "specialProvisions": {
+            "type": "boolean",
+            "description": "DG Special Provisions"
+          },
+          "additionalHandlingInfo": {
+            "type": "string",
+            "description": "Additional Handling for the DG item (global options)",
+            "nullable": true
+          },
+          "radioactiveContainerClass": {
+            "type": "string",
+            "description": "Radio Active Container Class",
+            "nullable": true
+          },
+          "overPackIndicator": {
+            "type": "boolean",
+            "description": "Over Pack option"
+          },
+          "reportableQuantity": {
+            "type": "boolean",
+            "description": "Reportable Quantity"
+          },
+          "authorization": {
+            "type": "string",
+            "description": "Authorization of the DG item",
+            "nullable": true
+          },
+          "netExplosiveType": {
+            "type": "string",
+            "description": "Net Explosive Type",
+            "nullable": true
+          },
+          "netExplosiveAmount": {
+            "type": "string",
+            "description": "Net Explosive Amount",
+            "nullable": true
+          },
+          "netExplosiveUnits": {
+            "type": "string",
+            "description": "Net Explosive Units",
+            "nullable": true
+          },
+          "carrierReferenceId": {
+            "type": "string",
+            "description": "Carrier Reference Id",
+            "nullable": true
+          },
+          "emergencyPhone": {
+            "type": "string",
+            "description": "Emergency Phone",
+            "nullable": true
+          },
+          "contractNo": {
+            "type": "string",
+            "description": "EmergPhone",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "External Address Detail"
+      },
+      "Piyovi.Tms.External.Api.Models.Shipments.ExternalShipmentInfoModel": {
+        "type": "object",
+        "properties": {
+          "shipMethod": {
+            "type": "string",
+            "description": "ShipMethod",
+            "nullable": true
+          },
+          "carrier": {
+            "type": "string",
+            "description": "Carrier",
+            "nullable": true
+          },
+          "serviceLevel": {
+            "type": "string",
+            "description": "ServiceLevel",
+            "nullable": true
+          },
+          "carrierAccount": {
+            "type": "string",
+            "description": "AccountId",
+            "nullable": true
+          },
+          "shipmentType": {
+            "type": "string",
+            "description": "Shipment Type",
+            "nullable": true
+          },
+          "paymentType": {
+            "type": "string",
+            "description": "Payment Type",
+            "nullable": true
+          },
+          "payorAccountId": {
+            "type": "string",
+            "description": "PayorAccountId",
+            "nullable": true
+          },
+          "payorCountry": {
+            "type": "string",
+            "description": "PayorCountry",
+            "nullable": true
+          },
+          "payorZipcode": {
+            "type": "string",
+            "description": "Payor Zipcode",
+            "nullable": true
+          },
+          "needByDate": {
+            "type": "string",
+            "description": "Need By Date",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Piyovi.Tms.External.Api.Models.Shipments.ExternalShipmentInternationalDetailModel": {
+        "type": "object",
+        "properties": {
+          "dutiesPaidBy": {
+            "type": "string",
+            "description": "Party Type",
+            "nullable": true
+          },
+          "dutiesPayorAccount": {
+            "type": "string",
+            "description": "Account Number",
+            "nullable": true
+          },
+          "dutiesPayorCountryCode": {
+            "type": "string",
+            "description": "Country Code",
+            "nullable": true
+          },
+          "totalCustomValue": {
+            "type": "number",
+            "description": "Custom Dec Val",
+            "format": "double"
+          },
+          "exportFilingConfirmation": {
+            "type": "string",
+            "description": "Itn Number",
+            "nullable": true
+          },
+          "reasonToExport": {
+            "type": "string",
+            "description": "Reason For Sale",
+            "nullable": true
+          },
+          "incoTerm1": {
+            "type": "string",
+            "description": "Inco Terms",
+            "nullable": true
+          },
+          "incoTerm2": {
+            "type": "string",
+            "description": "Inco Term 2",
+            "nullable": true
+          },
+          "currencyCode": {
+            "type": "string",
+            "description": "Currency Code",
+            "nullable": true
+          },
+          "eci": {
+            "type": "boolean",
+            "description": "ECI"
+          },
+          "commodities": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Piyovi.Tms.Framework.Models.Shipments.ShipmentCommoditieModel"
+            },
+            "description": "Commodities",
+            "nullable": true
+          },
+          "b13AFilingOption": {
+            "type": "string",
+            "description": "B13AFiling Option",
+            "nullable": true
+          },
+          "filingExemptionCode": {
+            "type": "string",
+            "description": "Exception Code",
+            "nullable": true
+          },
+          "permitNumber": {
+            "type": "string",
+            "description": "Permit Number",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Piyovi.Tms.External.Api.Models.Shipments.ExternalShipmentItemModel": {
+        "type": "object",
+        "properties": {
+          "referenceId": {
+            "type": "string",
+            "description": "Reference Id",
+            "nullable": true
+          },
+          "itemId": {
+            "type": "string",
+            "description": "Item Id",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "Name",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "description": "Description",
+            "nullable": true
+          },
+          "qty": {
+            "type": "integer",
+            "description": "Qty",
+            "format": "int32"
+          },
+          "transactionQty": {
+            "type": "integer",
+            "description": "Transcation Qty",
+            "format": "int32"
+          },
+          "balanceQty": {
+            "type": "integer",
+            "description": "PackQty",
+            "format": "int32",
+            "nullable": true
+          },
+          "packQty": {
+            "type": "integer",
+            "description": "PackQty",
+            "format": "int32"
+          },
+          "unitWeight": {
+            "type": "number",
+            "description": "Unit Weight",
+            "format": "double"
+          },
+          "unitOfWeight": {
+            "type": "string",
+            "description": "Unit Of Weight",
+            "nullable": true
+          },
+          "unitPrice": {
+            "type": "number",
+            "description": "UnitPrice",
+            "format": "double"
+          },
+          "currencyCode": {
+            "type": "string",
+            "description": "Currency Code",
+            "nullable": true
+          },
+          "countryOfOrigin": {
+            "type": "string",
+            "description": "Country Of Origin",
+            "nullable": true
+          },
+          "freightClass": {
+            "type": "string",
+            "description": "Freight Class",
+            "nullable": true
+          },
+          "eccn": {
+            "type": "string",
+            "description": "ECCN",
+            "nullable": true
+          },
+          "htsCode": {
+            "type": "string",
+            "description": "HTSCode",
+            "nullable": true
+          },
+          "nmfcCode": {
+            "type": "string",
+            "description": "NmfcCode",
+            "nullable": true
+          },
+          "licenceNo": {
+            "type": "string",
+            "description": "HTSCode",
+            "nullable": true
+          },
+          "deliveryId": {
+            "type": "string",
+            "description": "DeliveryId",
+            "nullable": true
+          },
+          "packageType": {
+            "type": "string",
+            "description": "Package Type",
+            "nullable": true
+          },
+          "packageCount": {
+            "type": "string",
+            "description": "Package Count",
+            "nullable": true
+          },
+          "orderId": {
+            "type": "string",
+            "description": "OrderId",
+            "nullable": true
+          },
+          "lotNumber": {
+            "type": "string",
+            "description": "LotNumber",
+            "nullable": true
+          },
+          "dg": {
+            "type": "boolean",
+            "description": "DG"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Piyovi.Tms.External.Api.Models.Shipments.ExternalShipmentPackageItemModel": {
+        "type": "object",
+        "properties": {
+          "referenceId": {
+            "type": "string",
+            "description": "Reference Id",
+            "nullable": true
+          },
+          "itemId": {
+            "type": "string",
+            "description": "ItemId",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "Name",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "description": "Description",
+            "nullable": true
+          },
+          "weight": {
+            "type": "number",
+            "description": "Weight",
+            "format": "double"
+          },
+          "unitOfWeight": {
+            "type": "string",
+            "description": "WeightUOM",
+            "nullable": true
+          },
+          "qty": {
+            "type": "integer",
+            "description": "Quantity",
+            "format": "int32"
+          },
+          "packageType": {
+            "type": "string",
+            "description": "Package Type",
+            "nullable": true
+          },
+          "packageCount": {
+            "type": "string",
+            "description": "Package Count",
+            "nullable": true
+          },
+          "dg": {
+            "type": "boolean",
+            "description": "DG"
+          },
+          "unitWeight": {
+            "type": "number",
+            "description": "Unit Weight",
+            "format": "double"
+          },
+          "nmfcCode": {
+            "type": "string",
+            "description": "NmfcCode",
+            "nullable": true
+          },
+          "nmfcSubCode": {
+            "type": "string",
+            "description": "NmfcSubCode",
+            "nullable": true
+          },
+          "freightClass": {
+            "type": "string",
+            "description": "LTLClass",
+            "nullable": true
+          },
+          "lotNumber": {
+            "type": "string",
+            "description": "Lot Number",
+            "nullable": true
+          },
+          "deliveryId": {
+            "type": "string",
+            "description": "IsHazardous",
+            "nullable": true
+          },
+          "orderId": {
+            "type": "string",
+            "description": "OrderId",
+            "nullable": true
+          },
+          "customProperties": {
+            "type": "object",
+            "additionalProperties": { },
+            "description": "Custom Properties",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Piyovi.Tms.External.Api.Models.Shipments.ExternalShipmentPackageModel": {
+        "type": "object",
+        "properties": {
+          "referenceId": {
+            "type": "string",
+            "description": "Package Id",
+            "nullable": true
+          },
+          "weight": {
+            "type": "number",
+            "description": "Weight",
+            "format": "double"
+          },
+          "PkgWeight": {
+            "type": "number",
+            "description": "Package Weight",
+            "format": "double",
+            "nullable": true
+          },
+          "unitOfWeight": {
+            "type": "string",
+            "description": "Weight UOM",
+            "nullable": true
+          },
+          "unitOfLength": {
+            "type": "string",
+            "description": "DimensionUOM",
+            "nullable": true
+          },
+          "length": {
+            "type": "number",
+            "description": "Length",
+            "format": "double"
+          },
+          "width": {
+            "type": "number",
+            "description": "Width",
+            "format": "double"
+          },
+          "height": {
+            "type": "number",
+            "description": "Height",
+            "format": "double"
+          },
+          "type": {
+            "type": "string",
+            "description": "Type",
+            "nullable": true
+          },
+          "freightClass": {
+            "type": "string",
+            "description": "Ltl Class",
+            "nullable": true
+          },
+          "nmfcCode": {
+            "type": "string",
+            "description": "NMFCCode",
+            "nullable": true
+          },
+          "declaredValue": {
+            "type": "number",
+            "description": "DeclaredValue",
+            "format": "double"
+          },
+          "count": {
+            "type": "integer",
+            "description": "Package Count",
+            "format": "int32",
+            "nullable": true
+          },
+          "dg": {
+            "type": "boolean",
+            "description": "DG"
+          },
+          "stackable": {
+            "type": "boolean",
+            "description": "Stackable"
+          },
+          "turnable": {
+            "type": "boolean",
+            "description": "Turnable"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Shipments.ExternalShipmentPackageItemModel"
+            },
+            "description": "Package Items",
+            "nullable": true
+          },
+          "references": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "Reference Fields",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "External Shipment Package"
+      },
+      "Piyovi.Tms.External.Api.Models.Shipments.ExternalShipmentPartyModel": {
+        "type": "object",
+        "properties": {
+          "addressId": {
+            "type": "string",
+            "description": "Address Id",
+            "nullable": true
+          },
+          "companyName": {
+            "type": "string",
+            "description": "FirstName",
+            "nullable": true
+          },
+          "contactName": {
+            "type": "string",
+            "description": "Last Name",
+            "nullable": true
+          },
+          "emailAddress": {
+            "type": "string",
+            "description": "Email",
+            "nullable": true
+          },
+          "phoneNumber1": {
+            "type": "string",
+            "description": "Phone Number1",
+            "nullable": true
+          },
+          "address1": {
+            "type": "string",
+            "description": "Address1",
+            "nullable": true
+          },
+          "address2": {
+            "type": "string",
+            "description": "Address2",
+            "nullable": true
+          },
+          "area": {
+            "type": "string",
+            "description": "Area",
+            "nullable": true
+          },
+          "city": {
+            "type": "string",
+            "description": "City",
+            "nullable": true
+          },
+          "stateProvince": {
+            "type": "string",
+            "description": "State",
+            "nullable": true
+          },
+          "country": {
+            "type": "string",
+            "description": "Country",
+            "nullable": true
+          },
+          "zipPostalCode": {
+            "type": "string",
+            "description": "ZipPostal Code",
+            "nullable": true
+          },
+          "vatorTax": {
+            "type": "string",
+            "description": "Vat/Tax",
+            "nullable": true
+          },
+          "vatorTaxType": {
+            "type": "string",
+            "description": "Vator Tax Type",
+            "nullable": true
+          },
+          "vatorTaxTypeCountryCode": {
+            "type": "string",
+            "description": "Vat or Tax Type Country Code",
+            "nullable": true
+          },
+          "party": {
+            "type": "string",
+            "description": "Partry",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": ""
+      },
+      "Piyovi.Tms.External.Api.Models.Shipments.ExternalShipmentRequestModel": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Id",
+            "nullable": true
+          },
+          "client": {
+            "type": "string",
+            "description": "Client",
+            "nullable": true
+          },
+          "action": {
+            "type": "string",
+            "description": "Action",
+            "nullable": true
+          },
+          "integration": {
+            "type": "string",
+            "description": "Integration Id",
+            "nullable": true
+          },
+          "referenceType": {
+            "type": "string",
+            "description": "Reference Type",
+            "nullable": true
+          },
+          "referenceNumber": {
+            "type": "string",
+            "description": "Reference Number",
+            "nullable": true
+          },
+          "location": {
+            "type": "string",
+            "description": "Location",
+            "nullable": true
+          },
+          "shipDate": {
+            "type": "string",
+            "description": "Ship Date",
+            "format": "date-time",
+            "nullable": true
+          },
+          "needByDate": {
+            "type": "string",
+            "description": "Need By Date",
+            "format": "date-time",
+            "nullable": true
+          },
+          "user": {
+            "type": "string",
+            "description": "User",
+            "nullable": true
+          },
+          "shipTo": {
+            "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Shipments.ExternalAddressDetailModel"
+          },
+          "shipFrom": {
+            "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Shipments.ExternalAddressDetailModel"
+          },
+          "parties": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Shipments.ExternalShipmentPartyModel"
+            },
+            "description": "Parties",
+            "nullable": true
+          },
+          "packages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Shipments.ExternalShipmentPackageModel"
+            },
+            "description": "Packages",
+            "nullable": true
+          },
+          "shipmentInfo": {
+            "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Shipments.ExternalShipmentInfoModel"
+          },
+          "references": {
+            "type": "object",
+            "additionalProperties": { },
+            "description": "References",
+            "nullable": true
+          },
+          "internationalDetail": {
+            "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Shipments.ExternalShipmentInternationalDetailModel"
+          },
+          "specialService": {
+            "type": "object",
+            "additionalProperties": { },
+            "description": "Special Service",
+            "nullable": true
+          },
+          "notes": {
+            "type": "string",
+            "description": "Special Instructions",
+            "nullable": true
+          },
+          "currencyCode": {
+            "type": "string",
+            "description": "Currency Code",
+            "nullable": true
+          },
+          "unitOfWeight": {
+            "type": "string",
+            "description": "UnitOfWeight",
+            "nullable": true
+          },
+          "unitOfLength": {
+            "type": "string",
+            "description": "UnitOfLength",
+            "nullable": true
+          },
+          "dgItems": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Shipments.ExternalShipmentDgItemModel"
+            },
+            "description": "External Shipment DgItem",
+            "nullable": true
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Shipments.ExternalShipmentItemModel"
+            },
+            "description": "Itemes",
+            "nullable": true
+          },
+          "additionalOptions": {
+            "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Shipments.ExternalShipmentAdditionalOption"
+          },
+          "exportFiling": {
+            "type": "object",
+            "additionalProperties": { },
+            "description": "Export Filing",
+            "nullable": true
+          },
+          "customAttributes": {
+            "type": "object",
+            "additionalProperties": { },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "External Shipment Request"
+      },
+      "Piyovi.Tms.External.Api.Models.ThirdPartyShipment.AddThirdPartyShipmentItemRequestModel": {
+        "type": "object",
+        "properties": {
+          "thirdPartyId": {
+            "type": "string",
+            "nullable": true
+          },
+          "thirdPartyShipmentId": {
+            "type": "string",
+            "nullable": true
+          },
+          "carrierCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "trackingNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "mode": {
+            "type": "string",
+            "nullable": true
+          },
+          "polName": {
+            "type": "string",
+            "nullable": true
+          },
+          "podName": {
+            "type": "string",
+            "nullable": true
+          },
+          "dispatchDate": {
+            "type": "string",
+            "nullable": true
+          },
+          "eta": {
+            "type": "string",
+            "nullable": true
+          },
+          "etd": {
+            "type": "string",
+            "nullable": true
+          },
+          "references": {
+            "type": "object",
+            "additionalProperties": { },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Piyovi.Tms.External.Api.Models.ThirdPartyShipment.AddThirdPartyShipmentRequestModel": {
+        "type": "object",
+        "properties": {
+          "shipments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.ThirdPartyShipment.AddThirdPartyShipmentItemRequestModel"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Piyovi.Tms.External.Api.Models.ThirdPartyShipment.UpdateThirdPartyShipmentItemRequestModel": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "trackingNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "references": {
+            "type": "object",
+            "additionalProperties": { },
+            "nullable": true
+          },
+          "archived": {
+            "type": "boolean",
+            "description": "Archived"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Piyovi.Tms.External.Api.Models.ThirdPartyShipment.UpdateThirdPartyShipmentRequestModel": {
+        "type": "object",
+        "properties": {
+          "shipments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.ThirdPartyShipment.UpdateThirdPartyShipmentItemRequestModel"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Piyovi.Tms.External.Api.Models.Tracking.AisData_WebhookRequestModel": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "Piyovi.Tms.External.Api.Models.Tracking.Demurrage_WebhookRequestModel": {
+        "type": "object",
+        "properties": {
+          "days_left": {
+            "nullable": true
+          },
+          "days_passed": {
+            "nullable": true
+          },
+          "cost_incurred_in_usd": {
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Piyovi.Tms.External.Api.Models.Tracking.DepartureEventOfLastOceanEvent_WebhookRequestModel": {
+        "type": "object",
+        "properties": {
+          "event_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "_event": {
+            "type": "string",
+            "nullable": true
+          },
+          "location": {
+            "type": "string",
+            "nullable": true
+          },
+          "actual_date": {
+            "type": "string",
+            "nullable": true
+          },
+          "planned_date": {
+            "type": "string",
+            "nullable": true
+          },
+          "original_planned_date": {
+            "type": "string",
+            "nullable": true
+          },
+          "discharge_or_loading_date": {
+            "type": "string",
+            "nullable": true
+          },
+          "actual_datetime": {
+            "type": "string",
+            "nullable": true
+          },
+          "planned_datetime": {
+            "type": "string",
+            "nullable": true
+          },
+          "original_planned_datetime": {
+            "type": "string",
+            "nullable": true
+          },
+          "mode": {
+            "type": "string",
+            "nullable": true
+          },
+          "remarks": {
+            "type": "string",
+            "nullable": true
+          },
+          "delayed": {
+            "type": "boolean"
+          },
+          "display_event": {
+            "type": "string",
+            "nullable": true
+          },
+          "vessel_details": {
+            "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Tracking.VesselDetails_WebhookRequestModel"
+          },
+          "connected_port": {
+            "nullable": true
+          },
+          "geofence_date": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Piyovi.Tms.External.Api.Models.Tracking.Detention_WebhookRequestModel": {
+        "type": "object",
+        "properties": {
+          "days_left": {
+            "nullable": true
+          },
+          "days_passed": {
+            "nullable": true
+          },
+          "cost_incurred_in_usd": {
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Piyovi.Tms.External.Api.Models.Tracking.Event_WebhookRequestModel": {
+        "type": "object",
+        "properties": {
+          "event_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "_event": {
+            "type": "string",
+            "nullable": true
+          },
+          "location": {
+            "type": "string",
+            "nullable": true
+          },
+          "actual_date": {
+            "type": "string",
+            "nullable": true
+          },
+          "planned_date": {
+            "type": "string",
+            "nullable": true
+          },
+          "original_planned_date": {
+            "type": "string",
+            "nullable": true
+          },
+          "actual_datetime": {
+            "type": "string",
+            "nullable": true
+          },
+          "planned_datetime": {
+            "type": "string",
+            "nullable": true
+          },
+          "original_planned_datetime": {
+            "type": "string",
+            "nullable": true
+          },
+          "discharge_or_loading_date": {
+            "type": "string",
+            "nullable": true
+          },
+          "mode": {
+            "type": "string",
+            "nullable": true
+          },
+          "remarks": {
+            "type": "string",
+            "nullable": true
+          },
+          "delayed": {
+            "type": "boolean"
+          },
+          "display_event": {
+            "type": "string",
+            "nullable": true
+          },
+          "vessel_details": {
+            "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Tracking.VesselDetails_WebhookRequestModel"
+          },
+          "connected_port": {
+            "nullable": true
+          },
+          "geofence_date": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Piyovi.Tms.External.Api.Models.Tracking.ExternalShipmentTrackingItemModel": {
+        "type": "object",
+        "properties": {
+          "trackingNumber": {
+            "type": "string",
+            "description": "Tracking Number",
+            "nullable": true
+          },
+          "id": {
+            "type": "string",
+            "description": "Id",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "External Shipment Tracking Item Model"
+      },
+      "Piyovi.Tms.External.Api.Models.Tracking.ExternalShipmentTrackingRequestModel": {
+        "type": "object",
+        "properties": {
+          "shipments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Tracking.ExternalShipmentTrackingItemModel"
+            },
+            "description": "Shipments",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "External Shipment Tracking Request Model"
+      },
+      "Piyovi.Tms.External.Api.Models.Tracking.LastOceanEvent_WebhookRequestModel": {
+        "type": "object",
+        "properties": {
+          "event_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "_event": {
+            "type": "string",
+            "nullable": true
+          },
+          "location": {
+            "type": "string",
+            "nullable": true
+          },
+          "actual_date": {
+            "type": "string",
+            "nullable": true
+          },
+          "planned_date": {
+            "type": "string",
+            "nullable": true
+          },
+          "original_planned_date": {
+            "type": "string",
+            "nullable": true
+          },
+          "actual_datetime": {
+            "type": "string",
+            "nullable": true
+          },
+          "planned_datetime": {
+            "type": "string",
+            "nullable": true
+          },
+          "original_planned_datetime": {
+            "type": "string",
+            "nullable": true
+          },
+          "discharge_or_loading_date": {
+            "type": "string",
+            "nullable": true
+          },
+          "mode": {
+            "type": "string",
+            "nullable": true
+          },
+          "remarks": {
+            "type": "string",
+            "nullable": true
+          },
+          "delayed": {
+            "type": "boolean"
+          },
+          "display_event": {
+            "type": "string",
+            "nullable": true
+          },
+          "vessel_details": {
+            "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Tracking.VesselDetails_WebhookRequestModel"
+          },
+          "connected_port": {
+            "nullable": true
+          },
+          "geofence_date": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Piyovi.Tms.External.Api.Models.Tracking.OtherData_WebhookRequestModel": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "Piyovi.Tms.External.Api.Models.Tracking.Stats_WebhookRequestModel": {
+        "type": "object",
+        "properties": {
+          "last_ocean_event": {
+            "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Tracking.LastOceanEvent_WebhookRequestModel"
+          },
+          "departure_event_of_last_ocean_event": {
+            "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Tracking.DepartureEventOfLastOceanEvent_WebhookRequestModel"
+          },
+          "demurrage": {
+            "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Tracking.Demurrage_WebhookRequestModel"
+          },
+          "detention": {
+            "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Tracking.Detention_WebhookRequestModel"
+          },
+          "best_case_eta": {
+            "type": "string",
+            "nullable": true
+          },
+          "predicted_eta": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Piyovi.Tms.External.Api.Models.Tracking.ThirdPartyShipmentGetEventRequestItemModel": {
+        "type": "object",
+        "properties": {
+          "trackingNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "id": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Piyovi.Tms.External.Api.Models.Tracking.ThirdPartyShipmentGetEventRequestModel": {
+        "type": "object",
+        "properties": {
+          "shipments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Tracking.ThirdPartyShipmentGetEventRequestItemModel"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Piyovi.Tms.External.Api.Models.Tracking.ThirdPartyWebhookRequestItemModel": {
+        "type": "object",
+        "properties": {
+          "tracking_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "container_number": {
+            "type": "string",
+            "nullable": true
+          },
+          "carrier_name": {
+            "type": "string",
+            "nullable": true
+          },
+          "carrier_code": {
+            "type": "string",
+            "nullable": true
+          },
+          "consignee": {
+            "type": "string",
+            "nullable": true
+          },
+          "mbl_or_awb_number": {
+            "type": "string",
+            "nullable": true
+          },
+          "tracking_number": {
+            "type": "string",
+            "nullable": true
+          },
+          "pol_name": {
+            "type": "string",
+            "nullable": true
+          },
+          "pod_name": {
+            "type": "string",
+            "nullable": true
+          },
+          "reference_no": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "container_type": {
+            "type": "string",
+            "nullable": true
+          },
+          "container_size": {
+            "type": "string",
+            "nullable": true
+          },
+          "events": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Tracking.Event_WebhookRequestModel"
+            },
+            "nullable": true
+          },
+          "stats": {
+            "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Tracking.Stats_WebhookRequestModel"
+          },
+          "ais_data": {
+            "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Tracking.AisData_WebhookRequestModel"
+          },
+          "tracking_link": {
+            "type": "string",
+            "nullable": true
+          },
+          "archived": {
+            "type": "boolean"
+          },
+          "other_data": {
+            "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Tracking.OtherData_WebhookRequestModel"
+          },
+          "shipment_remark": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Piyovi.Tms.External.Api.Models.Tracking.ThirdPartyWebhookRequestModel": {
+        "type": "object",
+        "properties": {
+          "updated_trackings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Piyovi.Tms.External.Api.Models.Tracking.ThirdPartyWebhookRequestItemModel"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Piyovi.Tms.External.Api.Models.Tracking.VesselDetails_WebhookRequestModel": {
+        "type": "object",
+        "properties": {
+          "vessel_num": {
+            "type": "string",
+            "nullable": true
+          },
+          "voyage_num": {
+            "type": "string",
+            "nullable": true
+          },
+          "vessel_name": {
+            "type": "string",
+            "nullable": true
+          },
+          "imo_number": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Piyovi.Tms.Framework.Models.Shipments.ShipmentCommoditieModel": {
+        "type": "object",
+        "properties": {
+          "referenceId": {
+            "type": "string",
+            "description": "Commodity Code",
+            "nullable": true
+          },
+          "numberOfBoxes": {
+            "type": "integer",
+            "description": "NumberOfBoxes",
+            "format": "int32"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description",
+            "nullable": true
+          },
+          "htsCode": {
+            "type": "string",
+            "description": "HtsCode",
+            "nullable": true
+          },
+          "eccn": {
+            "type": "string",
+            "description": "ECCN",
+            "nullable": true
+          },
+          "licenceNo": {
+            "type": "string",
+            "description": "Licence No",
+            "nullable": true
+          },
+          "quantity": {
+            "type": "integer",
+            "description": "Quantity",
+            "format": "int32"
+          },
+          "quantityUOM": {
+            "type": "string",
+            "description": "Quantity UOM",
+            "nullable": true
+          },
+          "unitWeight": {
+            "type": "number",
+            "description": "Unit Weight",
+            "format": "double"
+          },
+          "unitOfWeight": {
+            "type": "string",
+            "description": "Unit Of Weight",
+            "nullable": true
+          },
+          "unitPrice": {
+            "type": "number",
+            "description": "Unit Price",
+            "format": "double"
+          },
+          "customValue": {
+            "type": "number",
+            "description": "Custom Value",
+            "format": "double"
+          },
+          "currencyCode": {
+            "type": "string",
+            "description": "Currency Code",
+            "nullable": true
+          },
+          "countryOfOrigin": {
+            "type": "string",
+            "description": "Country Of Origin",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Shipment Commoditie Model"
+      },
+      "System.TimeSpan": {
+        "type": "object",
+        "properties": {
+          "ticks": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "days": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "hours": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "milliseconds": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "microseconds": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "nanoseconds": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "minutes": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "seconds": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "totalDays": {
+            "type": "number",
+            "format": "double",
+            "readOnly": true
+          },
+          "totalHours": {
+            "type": "number",
+            "format": "double",
+            "readOnly": true
+          },
+          "totalMilliseconds": {
+            "type": "number",
+            "format": "double",
+            "readOnly": true
+          },
+          "totalMicroseconds": {
+            "type": "number",
+            "format": "double",
+            "readOnly": true
+          },
+          "totalNanoseconds": {
+            "type": "number",
+            "format": "double",
+            "readOnly": true
+          },
+          "totalMinutes": {
+            "type": "number",
+            "format": "double",
+            "readOnly": true
+          },
+          "totalSeconds": {
+            "type": "number",
+            "format": "double",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "apiKey",
+        "description": "Please enter JWT with Bearer into field",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ]
+}

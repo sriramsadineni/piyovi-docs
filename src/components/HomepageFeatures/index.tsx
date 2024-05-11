@@ -1,27 +1,35 @@
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
+import Translate from '@docusaurus/Translate';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { IconDefinition, faSmile,  } from '@fortawesome/free-regular-svg-icons';
+import Link from '@docusaurus/Link';
+import { faBook, faBullhorn, faCode } from '@fortawesome/pro-light-svg-icons';
 
 type FeatureItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
+  Svg: IconDefinition;
   description: JSX.Element;
+  url?:string
 };
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'Product Guide',
+    url : "/docs/guides/intro",
+    Svg: faBook,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+       <Translate> Docusaurus was designed from the ground up to be easily installed and
+        used to get your website up and running quickly.</Translate>
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Api Reference',
+    Svg: faCode,
+    url : "/api-reference/v1",
     description: (
       <>
         Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
@@ -30,8 +38,9 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'Release',
+    Svg:  faBullhorn,
+    url : "/docs/changelogs/intro",
     description: (
       <>
         Extend or customize your website layout by reusing React. Docusaurus can
@@ -41,17 +50,22 @@ const FeatureList: FeatureItem[] = [
   },
 ];
 
-function Feature({title, Svg, description}: FeatureItem) {
+function Feature({title, Svg, description,url}: FeatureItem) {
   return (
-    <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
-      </div>
-      <div className="text--center padding-horiz--md">
-        <Heading as="h3">{title}</Heading>
-        <p>{description}</p>
-      </div>
-    </div>
+    <div className={clsx('col col--4 ')}>
+         <div  className="card">
+          <div className="card__header text--center">
+          <h1> <FontAwesomeIcon icon={Svg} /></h1>
+
+          </div>
+          <div className="card__body text--center" >
+            <Heading as="h3">
+                <Translate>{title}</Translate>
+            </Heading>
+          <p>{description}</p>
+          </div>
+          </div>
+     </div>
   );
 }
 
