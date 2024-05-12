@@ -69,7 +69,13 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'guides',
           position: 'left',
-          label: 'Product Guide',
+          label: 'Guides',
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'apireference',
+          position: 'left',
+          label: 'Api Reference',
         },
         {
           type: 'docSidebar',
@@ -82,10 +88,7 @@ const config: Config = {
           type: 'localeDropdown',
           position: 'right',
         },
-        {
-          label: "Api",
-          to: "/api",
-        },
+        
       ],
     },
     footer: {
@@ -95,7 +98,7 @@ const config: Config = {
       copyright: `Copyright © ${new Date().getFullYear()} Piyovi, Inc.`,
     },
     prism: {
-      theme: prismThemes.github,
+      theme: prismThemes.dracula,
       darkTheme: prismThemes.dracula,
     },
     announcementBar: {
@@ -106,22 +109,22 @@ const config: Config = {
    
   } satisfies Preset.ThemeConfig,
   plugins:[
-    [
-      '@scalar/docusaurus',
-      {
-        id: 'api-reference-1', 
-        label: "Api Reference",
-        route: '/api-reference',
-        configuration: {
-          baseServerURL:"https://apidev.piyovi.io",
-          hideModels: true,
-          withDefaultFonts: false,
-          spec: {
-            url: 'https://apidev.piyovi.io/swagger/v1/swagger.json',
-          },
-        }
-      } as ScalarOptions,
-    ],
+    // [
+    //   '@scalar/docusaurus',
+    //   {
+    //     id: 'api-reference-1', 
+    //     label: "Api Reference",
+    //     route: '/api-reference',
+    //     configuration: {
+    //       baseServerURL:"https://apidev.piyovi.io",
+    //       hideModels: true,
+    //       withDefaultFonts: false,
+    //       spec: {
+    //         url: 'http://localhost:7587/swagger/v1/swagger.json',
+    //       },
+    //     }
+    //   } as ScalarOptions,
+    // ],
 [ 'docusaurus-lunr-search',{
   languages: ['en'] // language codes
 
@@ -133,27 +136,56 @@ const config: Config = {
     docsPluginId: "classic", // id of plugin-content-docs or preset for rendering docs
     config: {
       api: {
+        
         specPath: "https://apidev.piyovi.io/swagger/v1/swagger.json",
-        outputDir: "docs/api", // No trailing slash
+        outputDir: "docs/api-reference", // No trailing slash
         sidebarOptions: {
           groupPathsBy: "tag",
           categoryLinkSource: "tag",
         },
-        version: "2.0.0", // Current version
-        label: "v2.0.0", // Current version label
-        baseUrl: "/api/piyovi-apis", // Leading slash is important
-        versions: {
-          "1.0.0": {
-            specPath: "https://apidev.piyovi.io/swagger/v1/swagger.json",
-            outputDir: "docs/api/1.0.0", // No trailing slash
-            label: "v1.0.0",
-            baseUrl: "/api/1.0.0/piyovi-apis", // Leading slash is important
-          },
-        },
+        // version: "2.0.0", // Current version
+        // label: "v2.0.0", // Current version label
+        // baseUrl: "/api-reference/get-started", // Leading slash is important
+        // versions: {
+        //   "1.0.0": {
+        //     specPath: "https://apidev.piyovi.io/swagger/v1/swagger.json",
+        //     outputDir: "docs/api-reference/1.0.0", // No trailing slash
+        //     label: "v1.0.0",
+        //     baseUrl: "/api-reference/1.0.0/get-started", // Leading slash is important
+        //   },
+        // },
       }
   
     }
-  }]
+  }],
+  [
+    '@docusaurus/plugin-pwa',
+    {
+      debug: true,
+      offlineModeActivationStrategies: [
+        'appInstalled',
+        'standalone',
+        'queryString',
+      ],
+      pwaHead: [
+        {
+          tagName: 'link',
+          rel: 'icon',
+          href: '/img/docusaurus.png',
+        },
+        {
+          tagName: 'link',
+          rel: 'manifest',
+          href: '/manifest.json', // your PWA manifest
+        },
+        {
+          tagName: 'meta',
+          name: 'theme-color',
+          content: 'rgb(37, 194, 160)',
+        },
+      ],
+    },
+  ],
 ],
 themes: ["docusaurus-theme-openapi-docs"],
 
