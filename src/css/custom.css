@@ -239,7 +239,18 @@ aside.theme-doc-sidebar-container .menu__list::before {
 }
 
 #search_input_react {
-  border-radius: var(--ifm-global-radius);
+  border-radius: 5px;
+  padding-left :10px;
+  padding-right :10px;
+  width: 250px;
+  background-image: none;
+}
+#search_input_react::placeholder{
+  content: '';
+}
+
+[data-theme='dark'] #search_input_react{
+  background: #f9fafb1a;
 }
 
 .pagination-nav__link:hover .pagination-nav__label {
